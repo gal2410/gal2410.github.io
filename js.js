@@ -101,14 +101,36 @@ function addCoinToSelectedCoinsArray(id) {
             $('#_' + myStr).prop("checked", false);
             console.log(selected_coins)
             showPopUpForCoins()
- $("#pop").on("click", function () {
-        
-           showPopUpForCoins()
-        
-    });
+
         }
     }
 }
+
+ $("#pop").on("click", function () {
+        
+function addCoinToSelectedCoinsArray(id) {
+    let myStr = id.id;
+    myStr = myStr.replace(/_/g, '');
+    console.log(myStr)
+    if (selected_coins.indexOf(myStr) >= 0) {
+        selected_coins.splice(selected_coins.indexOf(myStr), 1);
+        console.log(selected_coins);
+        console.log(selected_coins.length)
+    } else {
+        if (selected_coins.length <= 4) {
+            selected_coins.push(myStr);
+            $('#coins #_' + myStr).prop("checked", true);
+            console.log(selected_coins)
+        } else {
+            $('#_' + myStr).prop("checked", false);
+            console.log(selected_coins)
+            showPopUpForCoins()
+
+        }
+    }
+}
+        
+    });
 
 function showPopUpForCoins() {
     $("#Open_a_modal").html('');
