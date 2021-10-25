@@ -67,9 +67,9 @@ function getCoins() {
         }
     });
 }
-// result.length
+result.length
 function printAllCoins(result) {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < result.length; i++) {
         let cube = $("<div class='cube col-md-4 cube'></div>");
         $(cube).append(`<label class="switch col-md-3"  ><input type="checkbox"  id="_${result[i].symbol}" onClick="addCoinToSelectedCoinsArray(this)">(<span class="slider round" ></span>)</label>`);
         $(cube).append("<h3>" + result[i].symbol + "</h3>");
