@@ -38,11 +38,7 @@ $(document).ready(function () {
         About();
         
     });
-    $("#pop").on("click", function () {
-        
-           showPopUpForCoins()
-        
-    });
+   
     
     
     $("#search").on("click", function () {
@@ -105,6 +101,11 @@ function addCoinToSelectedCoinsArray(id) {
             $('#_' + myStr).prop("checked", false);
             console.log(selected_coins)
             showPopUpForCoins()
+ $("#pop").on("click", function () {
+        
+           showPopUpForCoins()
+        
+    });
         }
     }
 }
