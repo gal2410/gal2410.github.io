@@ -38,6 +38,13 @@ $(document).ready(function () {
         About();
         
     });
+    $("#pop").on("click", function () {
+        
+           showPopUpForCoins()
+        
+    });
+    
+    
     $("#search").on("click", function () {
         var value = $(".form-control").val().toLowerCase();
         $(".cube ").filter(function () {
@@ -67,7 +74,7 @@ function getCoins() {
         }
     });
 }
-result.length
+
 function printAllCoins(result) {
     for (let i = 0; i < result.length; i++) {
         let cube = $("<div class='cube col-md-4 cube'></div>");
