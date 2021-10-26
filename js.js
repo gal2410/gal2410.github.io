@@ -39,7 +39,7 @@ $(document).ready(function () {
         
     });
    
-    l()
+    
     
     $("#search").on("click", function () {
         var value = $(".form-control").val().toLowerCase();
@@ -220,12 +220,10 @@ function printAllCoinsInfo(result) {
         $("#" + result.id).parent().append(more);
     })
 }
-function l(){
-let l =$("<div class='col-md-12 row' >");
-     (!$("#coins").find('.l').length) {
-        $("#coins").append(l);
-    }
-}
+
+
+    
+        
 function About() {
     let About = $("<div class='col-md-12 About' >");
     $(About).append("<h1> The site is designed to bring a platform where everyone can keep up to date on the value of digital currencies. </h1>");
