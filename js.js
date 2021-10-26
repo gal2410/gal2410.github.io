@@ -219,7 +219,7 @@ function printAllCoinsInfo(result) {
         $(more).slideToggle("slow")
         $("#" + result.id).parent().append(more);
     })
-}
+}}
 
 
     
