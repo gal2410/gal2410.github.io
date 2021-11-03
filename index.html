@@ -11,52 +11,93 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
     <link href="style.css" type="text/css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-        <div class="header col-md-12">
-                <h1>Cryptonite
-                    
-                    <h5 class="col-md-12">Click on the currency you want to watch live, you can click on up to five coins at once, then click the live report button.</h5>
-                  
+        <div id="header" class="header col-md-12">
+                <span>Cryptocurrency</span>
+            
             </div>
-          
+            <container class="container">
+                <cards class="cards col-md-12">
+                    <bitcoin style="width: 20%" class="btc">
+                        <card class="asset-info row">
+                            <div class="title">
+                                <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg" width="15%"> 
+                                <h1>Bitcoin</h1>
+                            </div>
+                            <div class="details">
+                                <h2 class="asset-price" id="btcPrice"></h2>
+                            </div>
+                        </card>
+                        <canvas id="btcChart"></canvas>
+                    </bitcoin>
+            
+                    <cosmos style="width: 20%" class="cosmos">
+                        <card class="asset-info row">
+                            <div class="title">
+                                <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/ada.svg" width="15%"> 
+                                <h1>Cardano</h1>
+                            </div>
+                            <div class="details">
+                                <h2 class="asset-price" id="atomPrice"></h2>
+                            </div>
+                        </card>
+                        <canvas id="cosmosChart"></canvas>
+                    </cosmos>
+            
+                    <ethereum style="width: 20%" class="ethereum">
+                        <card class="asset-info row">
+                            <div class="title">
+                                <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/eth.svg" width="10%"> 
+                                <h1>Ethereum</h1>
+                            </div>
+                            <div class="details">
+                                <h2 class="asset-price" id="ethPrice"></h2>
+                            </div>
+                        </card>
+                        <canvas id="ethereumChart"></canvas>
+                    </ethereum>
+                    <ethereum style="width: 20%" class="BNB">
+                        <card class="asset-info row">
+                            <div class="title">
+                                <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/bnb.svg" width="10%"> 
+                                <h1>BNB</h1>
+                            </div>
+                            <div class="details">
+                                <h2 class="asset-price" id="BNBPrice"></h2>
+                            </div>
+                        </card>
+                        <canvas id="BNBChart"></canvas>
+                    </ethereum>
+                </cards>
+              </container>
     <div class="container">
         
         <hr>
         <div class="row">
-            <div class="btn-group col-md-4">
-                <button class="btn btn-default" id="Home"> Home
-                    <button class="btn btn-default col-md-12" id="Live_Repots"> Live Repots
-                        <button class="btn btn-default" id="About"> About
-            </div>
-            <div class="col-md-4">
-                <input type="text" class="form-control" placeholder="Search" />
-            </div>
-            <div class="col-md-4">
-                <span class="btn btn-outline-secondary" id="search"> search </span>
-            
-            </div>
+         
             <div class="parallax row" >
-            <div class="col-md-12">
+            <div class="col-4 ">
                 
-                <div class='row' id="coins"></div>
-                
+                <div class='col-md-12 row' id="coins"></div>
+                <div class='col-md-12 row' id="coinss"></div>
+                <div class='col-md-12 row' id="coinsss" ></div>
+                <div class='col-md-12 row' id="coinssss"> </div>
+                <div class='col-md-12 row' id="coinsssss"> </div>
+           
+            
             </div>
-        
-                <div class='col-md-12' id="Open_a_modal" ></div>
-                
+            <div class='col-7'id="chartContainer" style="height:550px; width: 100%;  "></div>
             
-            
-            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
         </div>
-        
+      
         </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
             crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
             crossorigin="anonymous"></script>
